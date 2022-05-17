@@ -14,8 +14,9 @@ soph = Player("Soph")
 luke = Player("Luke")
 kon = Player("Kon")
 
-table = Table()
-table.create_table([bob,tai,han,soph,luke,kon])
+names = [bob,tai,han,soph,luke,kon]
+table = Table(names)
+table.create_table(names)
 table.show_table()
 
 

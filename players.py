@@ -21,24 +21,27 @@ class Node:
         self.next = None
 
 class Table:
-    def __init__(self):
+    def __init__(self, names):
         self.tail = None
-        self.amt_players = 6
+        self.amt_players = len(names)
 
-    def create_table(players):
+    def create_table(self, the_players):
         for i in range(self.amt_players):
-            if self.list_is_empty():
-                new_node = Node(players[i])
+            if self.tail == None:
+                new_node = Node(the_players[i])
                 self.tail = new_node
+                self.tail.next = new_node
             else:
-                new_node = Node(players[i])
+                new_node = Node(the_players[i])
                 new_node.next = self.tail.next
                 self.tail.next = new_node
+                self.tail = new_node
 
-    def show_table():
+    def show_table(self):
         if self.tail == None:
             print("The table is empty")
         temp = self.tail.next
         while temp is not self.tail:
             print(temp.player.name)
             temp = temp.next
+        print(temp.player.name)
