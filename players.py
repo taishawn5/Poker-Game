@@ -37,11 +37,21 @@ class Table:
                 self.tail.next = new_node
                 self.tail = new_node
 
+    def deal_cards(self,deck):
+        if self.tail == None:
+            return print("There are no players to deal cards too")
+        temp = self.tail.next
+        i = 0
+        while temp is not self.tail:
+            temp.player.draw(deck).draw(deck)
+        temp.player.draw(deck).draw(deck)
+
+
     def show_table(self):
         if self.tail == None:
             print("The table is empty")
         temp = self.tail.next
         while temp is not self.tail:
-            print(temp.player.name)
+            print(temp.player.name + " " + temp.player.showHand())
             temp = temp.next
-        print(temp.player.name)
+        print(temp.player.name + " " + temp.player.showHand())

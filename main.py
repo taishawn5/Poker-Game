@@ -7,6 +7,10 @@ from players import *
 # bob = Player("Bob")
 # bob.draw(deck).draw(deck)
 # bob.showHand()
+
+deck = Deck()
+deck.shuffle()
+
 bob = Player("Bob")
 tai = Player("Tai")
 han = Player("Han")
@@ -17,6 +21,7 @@ kon = Player("Kon")
 names = [bob,tai,han,soph,luke,kon]
 table = Table(names)
 table.create_table(names)
+table.deal_cards(deck)
 table.show_table()
 
 
