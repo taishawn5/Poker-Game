@@ -44,6 +44,7 @@ class Table:
         i = 0
         while temp is not self.tail:
             temp.player.draw(deck).draw(deck)
+            temp = temp.next
         temp.player.draw(deck).draw(deck)
 
 
@@ -52,6 +53,6 @@ class Table:
             print("The table is empty")
         temp = self.tail.next
         while temp is not self.tail:
-            print(temp.player.name + " " + temp.player.showHand())
+            print(temp.player.name, ": ", temp.player.showHand())
             temp = temp.next
-        print(temp.player.name + " " + temp.player.showHand())
+        print(temp.player.name, ": ", temp.player.showHand())
